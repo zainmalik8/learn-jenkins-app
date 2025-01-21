@@ -31,7 +31,7 @@ pipeline {
         }
 
 
-                stage("Build") {
+        stage("Deploy") {
 
             agent {
                 docker {
