@@ -3,7 +3,7 @@ pipeline {
 
 
     environment {
-        NETLIFY_SITE_ID = 'b36d4dfb-8454-4070-ac17-808f6e8cec6e'
+        NETLIFY_SITE_ID = 'a9dab8fe-ff67-4784-b8fe-0af5e38b1a92'
         NETLIFY_AUTH_TOKEN = credentials('netlify-token')
     }
 
@@ -54,6 +54,8 @@ pipeline {
                     echo "Deploying to PROD ID: $NETLIFY_SITE_ID"
 
                     node_modules/.bin/netlify status
+
+                    node_modules/.bin/netlify deploy --dir=build --prod
                 '''
             }
         }
